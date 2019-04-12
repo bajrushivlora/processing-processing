@@ -7,8 +7,6 @@ function setup() {
   bg = loadImage('images/boxes.png');
   strokeWeight(60);
   frameRate(300);
-  text('use your arrow keys', 10, 30);
-  fill(255, 255, 255);
 }
 
 function draw() {
