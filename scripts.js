@@ -10,6 +10,9 @@ function setup() {
 }
 
 function draw() {
+    text('use your arrow keys', 10, 30);
+    fill('white');
+
     background(bg);
 
     line(x1, y1, x1, y1);
