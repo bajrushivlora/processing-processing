@@ -1,14 +1,16 @@
+let bg;
 let y1 = 0;
 let x1 = 0;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  strokeWeight(100);
+  bg = loadImage('images/boxes.png');
+  strokeWeight(60);
   frameRate(300);
 }
 
 function draw() {
-    background(0);
+    background(bg);
 
     line(x1, y1, x1, y1);
     line(x1, y1, x1, y1);
