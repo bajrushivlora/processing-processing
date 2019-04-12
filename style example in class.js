@@ -9,9 +9,7 @@ function setup () {
 }
 
 function draw() {
-    //  circle that is between 1 and 40, run it once)
-    // ellipseRandom = random(1, ellipseDiameter);
-    //  if it is pressed, fill it with yellow
+    ellipseRandom = random(1, ellipseDiameter);
     if (mouseIsPressed) {
         fill(255);
     //  otherwise fill with pink
@@ -33,4 +31,47 @@ function draw() {
 
 function getRandomColor() {
     return colors[int(random(0, colors.length))];
+}
+
+
+
+
+
+
+
+
+
+let ellipseWidth;
+let ellipseHeight;
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  noStroke();
+  background(0);
+  ellipseWidth = 300;
+  ellipseHeight = 300;
+}
+
+function draw() {
+  // keep draw() here to continue looping while waiting for keys
+}
+
+function keyPressed() {
+  let keyIndex = -1;
+  if (key >= 'a' && key <= 'z') {
+    keyIndex = key.charCodeAt(0) - 'a'.charCodeAt(0);
+  }
+  if (keyIndex === -1) {
+    // If it's not a letter key, clear the screen
+    background(230);
+  } else {
+    // It's a letter key, fill a rectangle
+    randFill_r = Math.floor(Math.random() * 255 + 1);
+    randFill_g = Math.floor(Math.random() * 225 + 1);
+    randFill_b = Math.floor(Math.random() * 225 + 1);
+    fill(randFill_r, randFill_g, randFill_b);
+    let x = map(keyIndex, 0, 30, 0, width - ellipseWidth);
+    let y = map(keyIndex, 0, 30, 0, height - ellipseHeight);
+    ellipse(x, y, ellipseWidth, ellipseHeight);
+  }
 }
